@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: eureka  # 项目名称
+#security:
+#  basic:
+#    enabled: true # eureka 安全访问
+#  user:
+#    name: user
+#    password: pa #用户名 密码
+server:
+  port: 8761 #内置Tomcat的设置端口号
+logging:
+  level:
+    root: warn
+eureka: #强制不注册到注册服务器
+  client:
+    #表示是否将自己注册到Eureka Server，默认为true。由于当前这个应用就是Eureka Server，故而设为false。
+    register-with-eureka: false
+    #表示是否从Eureka Server获取注册信息，默认为true。因为这是一个单点的Eureka Server，
+    #不需要同步其他的Eureka Server节点的数据，故而设为false
+    fetch-registry: false 
+    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。
+    #默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck: 
+      enabled: true
+  #配置关闭自我保护，并按需配置Eureka Server清理无效节点的时间间隔。
+  server:
+  # 设为false，关闭自我保护
+   enable-self-preservation: false
+   eviction-interval-timer-in-ms: 4000
+
