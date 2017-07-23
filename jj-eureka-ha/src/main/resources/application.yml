@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: jj-eureka-ha
+---
+spring:
+  profiles: jie1                                 # 指定profile=jie1
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: jie1                               # 指定当profile=jie1时，主机名是jie1
+  client:
+    serviceUrl:
+      defaultZone: http://jie2:8762/eureka/,http://jie3:8763/eureka/      # 将自己注册到jie2、jie3这两个Eureka上面去
+
+---
+spring:
+  profiles: jie2
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: jie2
+  client:
+    serviceUrl:
+      defaultZone: http://jie1:8761/eureka/,http://jie3:8763/eureka/
+      
+---
+spring:
+  profiles: jie3
+server:
+  port: 8763
+eureka:
+  instance:
+    hostname: jie3
+  client:
+    serviceUrl:
+      defaultZone: http://jie1:8761/eureka/,http://jie2:8762/eureka/

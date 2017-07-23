@@ -44,7 +44,7 @@ public class TestController {
      * 本地服务实例的信息
      * @return
      */
-    @GetMapping("/instance-info")
+    @GetMapping("/info")
     public ServiceInstance showInfo() {
       ServiceInstance localServiceInstance = this.client.getLocalServiceInstance();
       return localServiceInstance;

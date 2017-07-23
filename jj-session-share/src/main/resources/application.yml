@@ -1,8 +1,19 @@
 server:
-  port: 8081 #内置Tomcat的设置端口号
+  port: 8090 #内置Tomcat的设置端口号
 spring:
   application:
-    name: eureka-client  # 项目名称
+    name: session-share  # 项目名称
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    password: 
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 0
+      max-wait: -1
+    timeout: 0      
 #security:
 #  basic:
 #    enabled: true # eureka 安全访问
@@ -11,11 +22,11 @@ spring:
 #    password: pa #用户名 密码
 logging:
   level:
-    root: warn
+    root: info
 eureka: #强制不注册到注册服务器
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://jie1:8761/eureka/
   #配置关闭自我保护，并按需配置Eureka Server清理无效节点的时间间隔。
   instance:
     prefer-ip-address: true

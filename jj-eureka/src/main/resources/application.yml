@@ -30,4 +30,9 @@ eureka: #强制不注册到注册服务器
   # 设为false，关闭自我保护
    enable-self-preservation: false
    eviction-interval-timer-in-ms: 4000
+#  instance:
+#    environment:  test
+#    data-center-info: test
+      
+      
 

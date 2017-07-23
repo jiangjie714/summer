@@ -9,9 +9,12 @@
 	<description>spring boot code</description>
 
 	<modules>
+		<!-- <module>session-redis</module> -->
 		<module>jj-eureka</module>
+		<module>jj-eureka-ha</module>
 		<module>jj-eureka-client</module>
-    <module>user</module>
+    	<module>user</module>
+    	<module>jj-session-share</module>
   </modules>
 
 	<properties>
@@ -23,14 +26,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>1.4.5.RELEASE</version>
 	</parent>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Camden.SR6</version>
+				<version>Camden.SR7</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
