@@ -1,12 +1,12 @@
 spring:
   application:
     name: eureka  # 项目名称
-#security:
-#  basic:
-#    enabled: true # eureka 安全访问
-#  user:
-#    name: user
-#    password: pa #用户名 密码
+security:
+  basic:
+    enabled: true # eureka 安全访问
+  user:
+    name: user
+    password: pa #用户名 密码
 server:
   port: 8761 #内置Tomcat的设置端口号
 logging:
