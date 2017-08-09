@@ -1,5 +1,12 @@
 # summer
-cloud code test
+Spring-Cloud Spirng boot code Project (Practice)
+# jj-eureka
+在测试的时候比较每次都要用工具去启动Eureka 比较操蛋.将其打成jar包，
+将jar包拷到固定位置方便以后多个jar 一起好找（本人就将其和zuul的项目放在一起）。
+跑其他在开发的程序也方便。
+cmd 或是直接写bat脚本
+java  -jar X:xxx/xxx/jj-eureka.jar
+
 
 # jj-eureka-ha
 Eureka 的HA： 通过类似于zookeeper 集群的形式相互发现，三个不一起启动的时候会报错，单依然可用
