@@ -8,7 +8,7 @@ Eureka 的HA： 通过类似于zookeeper 集群的形式相互发现，三个不
 # jj-session-share
 该项目为我做测试spring-session和redis做 session共享的测试项目。
 
-#jj-gateway-zuul
+# jj-gateway-zuul
 该项目为网关入口。配置文件中要注意：
 zuul:
   add-host-header: true
@@ -27,17 +27,17 @@ zuul:
   feign中的session 共享也匹配成功。
 
 
-#jj-rabbitmq
+# jj-rabbitmq
 RabbitMQ的服务端，用springboot 写的，比较方便，比传统的配置XML文件形式舒服很多
-#jj-rabbit-client
+# jj-rabbit-client
 RabbitMQ的客户端，用例很简单。
 本人测试用例运行在Windows 10上 1个服务端8万数据的发送，差不多5分钟，启了3个接收端差不多10分钟内完成，速度还是可以接受。
 
-#关于 Ribbon 的项目暂时不想写
+# 关于 Ribbon 的项目暂时不想写
 个人觉得不是特殊的项目需要运用到其他方式的负责均衡用feign就可以了。参考了很多国外的高手写的微服务，大多都直接上feign。
 
-#关于 Hystrix的项目 没有整合好  hystrix-turbine-mq
+# 关于 Hystrix的项目 没有整合好  hystrix-turbine-mq
 如有其他问题或是关于技术的讨论可通过本人的邮箱联系 可能提Issues会比较慢回复。
 
-#本人邮箱jiangjie714@163.com
+# 本人邮箱jiangjie714@163.com
 
