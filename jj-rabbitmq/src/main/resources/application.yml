@@ -1,0 +1,62 @@
+server:
+  port: 8092  #内置Tomcat的设置端口号
+spring:
+  application:
+    name: rabbitmq  # 项目名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/fufang
+    username: root
+    password: root
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+      
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#  redis:
+#    host: localhost
+#    database: 0
+#    port: 6379
+#    password: 
+#    pool:
+#      max-active: 8
+#      max-idle: 8
+#      min-idle: 0
+#      max-wait: -1
+#    timeout: 0      
+#security:
+#  basic:
+#    enabled: true # eureka 安全访问
+#  user:
+#    name: user
+#    password: pa #用户名 密码
+logging:
+  level:
+    root: info
+eureka: #强制不注册到注册服务器
+  client:
+    service-url:
+      defaultZone: http://jie1:8761/eureka/
+  #配置关闭自我保护，并按需配置Eureka Server清理无效节点的时间间隔。
+  instance:
+    prefer-ip-address: true
+    instance-id:  ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+mybatis:
+  type-aliases-package: com.jj.cloud
+
+  

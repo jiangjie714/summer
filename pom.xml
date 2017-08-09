@@ -15,6 +15,10 @@
 		<module>jj-eureka-client</module>
     	<module>user</module>
     	<module>jj-session-share</module>
+    <module>jj-rabbitmq</module>
+    <module>jj-gateway-zuul</module>
+    <module>jj-user-feign</module>
+    <module>jj-rabbit-client</module>
   </modules>
 
 	<properties>

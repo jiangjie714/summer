@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jj.cloud.mapper.MatMapper" >
+  <resultMap id="BaseResultMap" type="com.jj.cloud.domain.Mat" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="barcode" property="barcode" jdbcType="VARCHAR" />
+    <result column="nationalcode" property="nationalcode" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="spec" property="spec" jdbcType="VARCHAR" />
+    <result column="gb" property="gb" jdbcType="VARCHAR" />
+    <result column="lx" property="lx" jdbcType="VARCHAR" />
+    <result column="manuf" property="manuf" jdbcType="VARCHAR" />
+  </resultMap>
+ 
+  <sql id="Base_Column_List" >
+    id, barcode, nationalcode, name, spec, gb, lx, manuf
+  </sql>
+  
+  <select id="getList" resultMap="BaseResultMap">
+  select 
+  		id, barcode, nationalcode, name, spec, gb, lx, manuf 
+  from mat
+  </select>
+
+  <insert id="insert" parameterType="com.jj.cloud.domain.Mat" >
+    insert into mat (id, barcode, nationalcode, 
+      name, spec, gb, lx, 
+      manuf)
+    values (#{id,jdbcType=INTEGER}, #{barcode,jdbcType=VARCHAR}, #{nationalcode,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{spec,jdbcType=VARCHAR}, #{gb,jdbcType=VARCHAR}, #{lx,jdbcType=VARCHAR}, 
+      #{manuf,jdbcType=VARCHAR})
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.jj.cloud.domain.Mat" >
+    insert into mat
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="barcode != null" >
+        barcode,
+      </if>
+      <if test="nationalcode != null" >
+        nationalcode,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="spec != null" >
+        spec,
+      </if>
+      <if test="gb != null" >
+        gb,
+      </if>
+      <if test="lx != null" >
+        lx,
+      </if>
+      <if test="manuf != null" >
+        manuf,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="barcode != null" >
+        #{barcode,jdbcType=VARCHAR},
+      </if>
+      <if test="nationalcode != null" >
+        #{nationalcode,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="spec != null" >
+        #{spec,jdbcType=VARCHAR},
+      </if>
+      <if test="gb != null" >
+        #{gb,jdbcType=VARCHAR},
+      </if>
+      <if test="lx != null" >
+        #{lx,jdbcType=VARCHAR},
+      </if>
+      <if test="manuf != null" >
+        #{manuf,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  
+</mapper>

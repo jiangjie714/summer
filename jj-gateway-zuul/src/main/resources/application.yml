@@ -1,0 +1,40 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: gateway-zuul
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    password: 
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 0
+      max-wait: -1
+    timeout: 0    
+eureka: #强制不注册到注册服务器
+  client:
+    service-url:
+      defaultZone: http://jie1:8761/eureka/
+  #配置关闭自我保护，并按需配置Eureka Server清理无效节点的时间间隔。
+  instance:
+    prefer-ip-address: true
+    instance-id:  ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+zuul:
+  add-host-header: true
+  sensitive-headers: 
+  host:
+    max-total-connections: 50
+#  ignored-services: '*'   # 使用'*'可忽略所有微服务
+#  routes:
+#    user: /users/**
+                
+
+
+# 上传大文件得将超时时间设置长一些，否则会报超时异常。以下几行超时设置来自http://cloud.spring.io/spring-cloud-static/Camden.SR3/#_uploading_files_through_zuul
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000

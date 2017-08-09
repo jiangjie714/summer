@@ -1,0 +1,13 @@
+jj-eureka/target/
+jj-eureka-ha/.settings/
+jj-eureka-ha/target/
+jj-gateway-zuul/.settings/
+jj-gateway-zuul/target/
+jj-rabbit-client/.settings/
+jj-rabbit-client/target/
+jj-rabbitmq/.settings/
+jj-rabbitmq/target/
+jj-session-share/target/
+jj-user-feign/.settings/
+jj-user-feign/target/
+user/target/

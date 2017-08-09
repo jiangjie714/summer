@@ -24,4 +24,13 @@ public class TestController {
         map.put("ServerPort", "服务端口号为 "+port);
         return map;
     }
+    
+    @RequestMapping(value = "/removesession", method = RequestMethod.GET)
+    public Object removeSession(HttpServletRequest request){
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("SessionId", request.getSession().getId());
+        map.put("ServerPort", "服务端口号为 "+port);
+//        request.getSession().r
+        return map;
+    }
 }
