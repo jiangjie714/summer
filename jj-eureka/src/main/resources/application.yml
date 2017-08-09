@@ -9,6 +9,8 @@ security:
     password: pa #用户名 密码
 server:
   port: 8761 #内置Tomcat的设置端口号
+  tomcat:
+    max-threads: 1000
 logging:
   level:
     root: warn
