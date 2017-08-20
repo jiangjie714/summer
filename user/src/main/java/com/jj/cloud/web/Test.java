@@ -53,7 +53,7 @@ public class Test {
         }
     }
     
-    public static void main(String[] args) throws Exception {
+    public static void main11(String[] args) throws Exception {
         // 最先run SampleThread
         new SampleThread().start();
        // 运行两个工作线程

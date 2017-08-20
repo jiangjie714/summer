@@ -26,7 +26,7 @@ zuul:
   add-host-header: true
   sensitive-headers: 
   host:
-    max-total-connections: 50
+    max-total-connections: 250 # 默认200  最小20 
 #  ignored-services: '*'   # 使用'*'可忽略所有微服务
 #  routes:
 #    user: /users/**

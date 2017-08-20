@@ -11,7 +11,6 @@
   <groupId>com.jj.cloud</groupId>
   <artifactId>user</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
   <name>user Maven Webapp</name>
   <url>http://maven.apache.org</url>
  
@@ -74,10 +73,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin </artifactId>
-				<configuration>
-					<!--fork : 如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
+				<!-- <configuration>
 					<fork>true</fork>
 				</configuration>
+				  -->
+				<!--fork : 如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
 			</plugin>
 		</plugins>
 	</build>

@@ -20,7 +20,7 @@ public class TopicRabbitConfig {
 	}
 
 	@Bean
-	public Queue queueMessages() {
+	public Queue queueMessages1() {
 		return new Queue(TopicRabbitConfig.messages);
 	}
 
@@ -34,8 +34,8 @@ public class TopicRabbitConfig {
 		return BindingBuilder.bind(queueMessage).to(exchange).with("topic.message");
 	}
 
-	@Bean
-	public Binding bindingExchangeMessages(Queue queueMessages, TopicExchange exchange) {
-		return BindingBuilder.bind(queueMessages).to(exchange).with("topic.#");
-	}
+//	@Bean
+//	public Binding bindingExchangeMessages(Queue queueMessages, TopicExchange exchange) {
+//		return BindingBuilder.bind(queueMessages).to(exchange).with("topic.#");
+//	}
 }

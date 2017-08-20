@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jj.cloud.domain.Mat;
 import com.jj.cloud.domain.User;
+import com.jj.cloud.fanout.FanoutSender;
 import com.jj.cloud.object.ObjectSender;
 import com.jj.cloud.service.TestServiceImpl;
 import com.jj.cloud.topic.TopicReceiver;
@@ -26,6 +27,9 @@ public class TestController {
 	
 	@Autowired
 	private ObjectSender objectSender;
+	
+	@Autowired
+	private FanoutSender fanoutSender;
 	
 	@Autowired
 	private TestServiceImpl testServiceImpl;
@@ -57,6 +61,16 @@ public class TestController {
 		for(Mat mat:list) {
 			objectSender.sendMat(mat);
 		}
+		
+		return  msg;
+	}
+	
+	@RequestMapping(value = "/fanout", method = RequestMethod.GET)
+	public String fanoutTest() {
+		String msg ="success";
+
+		//fanoutSender.send();
+		sender.send1();
 		
 		return  msg;
 	}
